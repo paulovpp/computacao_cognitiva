@@ -38,9 +38,9 @@ print(lemmatize_sentence(tweet_tokens[0]))
 def remove_noise(tweet_tokens, stop_words = ()):
     cleaned_tokens = []
     for token, tag in pos_tag(tweet_tokens):
-        token = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|'\'(?:%[0-9a-fA-F][0-9a-fA-F]))+','', token)
+        token = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|''\'(?:%[0-9a-fA-F][0-9a-fA-F]))+','', token)
         token = re.sub("(@[A-Za-z0-9_]+)","", token)
-         if tag.startswith("NN"):
+        if tag.startswith("NN"):
             pos = 'n'
         elif tag.startswith('VB'):
             pos = 'v'
@@ -48,7 +48,7 @@ def remove_noise(tweet_tokens, stop_words = ()):
             pos = 'a'
         lemmatizer = WordNetLemmatizer()
         token = lemmatizer.lemmatize(token, pos)
-         if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
+        if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
             cleaned_tokens.append(token.lower())
     return cleaned_tokens
 
@@ -58,9 +58,9 @@ def remove_noise(tweet_tokens, stop_words = ()):
 def remove_noise(tweet_tokens, stop_words = ()):
     cleaned_tokens = []
     for token, tag in pos_tag(tweet_tokens):
-        token = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|'\'(?:%[0-9a-fA-F][0-9a-fA-F]))+','', token)
+        token = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|''\'(?:%[0-9a-fA-F][0-9a-fA-F]))+','', token)
         token = re.sub("(@[A-Za-z0-9_]+)","", token)
-         if tag.startswith("NN"):
+        if tag.startswith("NN"):
             pos = 'n'
         elif tag.startswith('VB'):
             pos = 'v'
@@ -68,7 +68,7 @@ def remove_noise(tweet_tokens, stop_words = ()):
             pos = 'a'
         lemmatizer = WordNetLemmatizer()
         token = lemmatizer.lemmatize(token, pos)
-         if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
+        if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
             cleaned_tokens.append(token.lower())
     return cleaned_tokens
 
@@ -96,7 +96,7 @@ stop_words = stopwords.words('english')
 print(remove_noise(tweet_tokens[0], stop_words))
 
 ## Determining word's density
-... 
+
 def get_all_words(cleaned_tokens_list):
     for tokens in cleaned_tokens_list:
         for token in tokens:
@@ -129,14 +129,13 @@ classifier = NaiveBayesClassifier.train(train_data)
 print("Accuracy is:", classify.accuracy(classifier, test_data)) 
 print(classifier.show_most_informative_features(10))
 
-...
 
 custom_tweet = "I ordered just once from TerribleCo, they screwed up, never used the app again."
 custom_tokens = remove_noise(word_tokenize(custom_tweet)) 
 print(classifier.classify(dict([token, True] for token in custom_tokens)))
 
 
-
+## Quiz
 
 custom_tweet = "I ordered just once from TerribleCo, they screwed up gain." 
 custom_tokens = remove_noise(word_tokenize(custom_tweet)) 
