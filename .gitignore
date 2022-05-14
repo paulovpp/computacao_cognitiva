@@ -2728,3 +2728,6 @@ Class 01/Aula_1/aula1.venv/Scripts/pip3.10.exe
 Class 01/Aula_1/aula1.venv/Scripts/pip3.exe
 Class 01/Aula_1/aula1.venv/Scripts/python.exe
 Class 01/Aula_1/aula1.venv/Scripts/pythonw.exe
+Class 02/README.md
+.gitignore
+Class 02/__pycache__/nlp_utils.cpython-310.pyc
