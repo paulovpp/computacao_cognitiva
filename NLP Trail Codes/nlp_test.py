@@ -23,7 +23,8 @@ import re, string
 
 def lemmatize_sentence(tokens):
     lemmatizer = WordNetLemmatizer()
-    lemmatized_sentence = []    for word, tag in pos_tag(tokens):
+    lemmatized_sentence = []   
+    for word, tag in pos_tag(tokens):
         if tag.startswith('NN'):
             pos = 'n'
         elif tag.startswith('VB'):
