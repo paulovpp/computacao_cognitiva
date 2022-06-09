@@ -2796,3 +2796,5 @@ Test/img(17)_gold.jpg
 Test/img(18)_gold.jpg
 Test/img(19)_gold.jpg
 Test/img1_res.jpg
+Test/__pycache__/get_dims.cpython-310.pyc
+Test/__pycache__/read_proj.cpython-310.pyc
